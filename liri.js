@@ -4,11 +4,10 @@ var keys = require("./keys.js");
 var fs = require("fs");
 var Spotify = require('node-spotify-api');
 var axios = require("axios");
-// var inquirer = require("inquirer");
-// var bandsintown = require("bandsintown");
+var bandsintown = require("bandsintown");
 // var omdb = require("omdb");
-// var moment = require('moment');
-// moment().format();
+var moment = require('moment');
+moment().format();
 
 //vars 
 var action = process.argv[2]
@@ -63,8 +62,8 @@ function song(){
 
 //function to run get data for the movie api
 function movie(){
-    var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=e53d9ff8";
-    var movie = functionData;
+    var queryUrl = "http://www.omdbapi.com/?t=" + functionData + "&y=&plot=short&apikey=e53d9ff8";
+  
 
     axios
     .get(queryUrl)
@@ -81,19 +80,30 @@ function movie(){
         console.log(response.data.Actors)
     })
 
-    if (functionData === " "){
-         movie = "Mr. Nobody";
+
+    var empty;
+
+    if (functionData === empty ){
+         functionData = "Mr. Nobody";
         console.log("If you haven't watched 'Mr. Nobody', then you should. Its on Netflix! http://www.imdb.com/title/tt0485947/");
     }
 }
 
+//function to run get data for the bands in town concert
 function band(){
     var queryURL = "https://rest.bandsintown.com/artists/" + functionData + "?app_id=codingbootcamp";
 
     axios
     .get(queryURL)
     .then(function(response){
-        console.log(response)
+        // console.log(response)
+        console.log(response.data[0].venue.name)
+        console.log(response.data[0].venue.location)
+        
+        //format the date of the show
+        var date = response.data[0].datetime;
+        var momentTime = moment(date).format('MM/DD/YYYY')
+        console.log(momentTime)
     })
 }
 
