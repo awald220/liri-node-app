@@ -4,8 +4,6 @@ var keys = require("./keys.js");
 var fs = require("fs");
 var Spotify = require('node-spotify-api');
 var axios = require("axios");
-var bandsintown = require("bandsintown");
-// var omdb = require("omdb");
 var moment = require('moment');
 moment().format();
 
@@ -106,6 +104,7 @@ function band(){
         console.log(momentTime)
     })
 }
+
 
 function doWhatItSays(){
     fs.readFile("random.txt", "utf8", function(error, data){
