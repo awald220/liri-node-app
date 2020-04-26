@@ -70,3 +70,13 @@ function movie(){
         console.log(response);
     })
 }
+
+function band(){
+    var queryURL = "https://rest.bandsintown.com/artists/" + functionData + "?app_id=codingbootcamp";
+
+    axios
+    .get(queryURL)
+    .then(function(response){
+        console.log(response)
+    })
+}
