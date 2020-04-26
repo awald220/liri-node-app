@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/awald220/liri-node-app/issues"
   },
-  "homepage": "https://github.com/awald220/liri-node-app#readme"
+  "homepage": "https://github.com/awald220/liri-node-app#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "node-spotify-api": "^1.1.1"
+  }
 }
