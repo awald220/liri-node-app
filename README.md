@@ -12,6 +12,15 @@ It uses the axios package to retrieve the data to power the app. It also uses No
 
 
 # psuedocode
+make files/set them up
+install the stuff
+set up apis 
+get a response from the apis 
+set up functions
+set up switch
+send data to the text file
+
+
 
 
 # instruction
