@@ -61,14 +61,30 @@ function song(){
       });
 }
 
+//function to run get data for the movie api
 function movie(){
-    var queryUrl = "http://www.omdbapi.com/?t=" + functionData + "&y=&plot=short&apikey=e53d9ff8";
+    var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=e53d9ff8";
+    var movie = functionData;
 
     axios
     .get(queryUrl)
     .then(function(response){
         console.log(response);
+
+        console.log(response.data.Title)
+        console.log(response.data.Year)
+        console.log(response.data.imdbRating)
+        console.log(response.data.Ratings[1].Value)
+        console.log(response.data.Country)
+        console.log(response.data.Language)
+        console.log(response.data.Plot)
+        console.log(response.data.Actors)
     })
+
+    if (functionData === " "){
+         movie = "Mr. Nobody";
+        console.log("If you haven't watched 'Mr. Nobody', then you should. Its on Netflix! http://www.imdb.com/title/tt0485947/");
+    }
 }
 
 function band(){
@@ -82,5 +98,14 @@ function band(){
 }
 
 function doWhatItSays(){
-    fs.readFile()
+    fs.readFile("random.txt", "utf8", function(error, data){
+        if (error) {
+            return console.log(error);
+        }
+
+        var dataArr = data.split(",");
+        action1=dataArr[1];
+
+        pick(action1, functionData1);
+    })
 }
