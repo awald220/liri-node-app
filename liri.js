@@ -16,21 +16,21 @@ var functionData = process.argv[3]
 console.log(action, functionData)
 
 switch(action){
-    // case "movie-this":
-    //     movie()
-    //     break;
+    case "movie-this":
+        movie()
+        break;
 
-    // case "concert-this":
-    //     band()
-    //     break;
+    case "concert-this":
+        band()
+        break;
 
     case "spotify-this-song":
         song()
         break;
 
-    // case "do-what-it-says":
-    //     says()
-    //     break;
+    case "do-what-it-says":
+        says()
+        break;
 
     default:
         break;
@@ -61,3 +61,12 @@ function song(){
       });
 }
 
+function movie(){
+    var queryUrl = "http://www.omdbapi.com/?t=" + functionData + "&y=&plot=short&apikey=e53d9ff8";
+
+    axios
+    .get(queryUrl)
+    .then(function(response){
+        console.log(response);
+    })
+}
