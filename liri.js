@@ -80,3 +80,7 @@ function band(){
         console.log(response)
     })
 }
+
+function doWhatItSays(){
+    fs.readFile()
+}
