@@ -14,13 +14,13 @@ It uses the Spotify, OMBD, and Bands in town API's
 
 
 # psuedocode
-make files/set them up
-install the stuff
-set up apis 
-get a response from the apis 
-set up functions
-set up switch
-send data to the text file
+1. make files/set them up
+2. install the stuff
+3. set up apis 
+4. get a response from the apis 
+5. set up functions
+6. set up switch
+7. send data to the text file
 
 
 
