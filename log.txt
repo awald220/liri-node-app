@@ -41,3 +41,8 @@
                 Track Name: Thriller
                 Album Name: Scream
                 
+                Artist Name: Ace of Base
+                Preview URL: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=32f65d124f9246eb953de653e60f3c6b
+                Track Name: The Sign
+                Album Name: The Sign
+                
