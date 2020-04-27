@@ -37,10 +37,11 @@ switch(action){
 
 //function that runs the spotify api
 function song(){
-    var spotify = new Spotify({
-        id: "32f65d124f9246eb953de653e60f3c6b",
-        secret: "83bd22ae940340d7a78adde1a238deec"
-    });
+    var spotify = new Spotify(keys.spotify);
+
+    if(!functionData){
+        functionData = "the sign"
+    }
 
     spotify.search({ type: 'track', query: functionData, limit: 1}, function(err, data) {
         if (err) {
@@ -48,58 +49,124 @@ function song(){
         }
    
         for (var key in data.tracks.items){
-            console.log("Artist Name: " + data.tracks.items[key].artists[0].name);
-            console.log("Preview URL: " + data.tracks.items[key].preview_url);
-            console.log("Track Name: " + data.tracks.items[key].name);
-            console.log("Album Name: " + data.tracks.items[key].album.name);
-            
+            var output;
+            output = `
+                Artist Name: ${data.tracks.items[key].artists[0].name}
+                Preview URL: ${data.tracks.items[key].preview_url}
+                Track Name: ${data.tracks.items[key].name}
+                Album Name: ${data.tracks.items[key].album.name}
+                `
         }  
+
+        console.log(output)
+
+        fs.appendFile("log.txt", output,  function(error){
+            if (error) {
+                console.log(err);
+              }
+              else {
+                  console.log(functionData, "Has been logged!")
+              }
+        })
         
       });
 }
 
 //function to run get data for the movie api
 function movie(){
+    if (!functionData){
+        functionData = "mr nobody"
+    }
+
     var queryUrl = "http://www.omdbapi.com/?t=" + functionData + "&y=&plot=short&apikey=e53d9ff8";
   
 
     axios
     .get(queryUrl)
     .then(function(response){
-        console.log("Movie Title: " + response.data.Title)
-        console.log("Year: " + response.data.Year)
-        console.log("IMBD Rating: " + response.data.imdbRating)
-        console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value)
-        console.log("Country: " + response.data.Country)
-        console.log("Language: " + response.data.Language)
-        console.log("Plot: " + response.data.Plot)
-        console.log("Cast: " + response.data.Actors)
+        var output;
+        output = `
+            Movie Title: ${response.data.Title}
+            Year: ${response.data.Year}
+            IMBD Rating: ${response.data.imdbRating}
+            Country: ${response.data.Country}
+            Language: ${response.data.Language}
+            Plot: ${response.data.Plot}
+            Cast:${response.data.Actors}
+            `
+        if(response.data.Ratings.length){
+        output = `
+            Movie Title: ${response.data.Title}
+            Year: ${response.data.Year}
+            IMBD Rating: ${response.data.imdbRating}
+            Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}
+            Country: ${response.data.Country}
+            Language: ${response.data.Language}
+            Plot: ${response.data.Plot}
+            Cast:${response.data.Actors}
+            `
+        }
+
+        console.log(output)
+        fs.appendFile("log.txt", output,  function(error){
+            if (error) {
+                console.log(err);
+              }
+              else {
+                  console.log(functionData, "Has been logged!")
+              }
+        })
+       
     })
+
+   
 }
 
 //function to run get data for the bands in town concert
 function band(){
+    if(!functionData){
+        functionData = "taylor swift"
+        console.log("Give " + functionData + " a try!")
+    }
+
     var queryURL = "https://rest.bandsintown.com/artists/" + functionData + "/events?app_id=codingbootcamp";
 
     axios
     .get(queryURL)
     .then(function(response){
-        // console.log(response)
-        
-        console.log(functionData + " is playing at: " + response.data[0].venue.name);
-        console.log("This is located in: " + response.data[0].venue.city);
-
+       
         var date = response.data[0].datetime;
         var momentTime = moment(date).format('MM/DD/YYYY')
+        var output;
+        var output = `
+            Venue Name: ${response.data[0].venue.name}
+            Venue Location: ${response.data[0].venue.city}
+            Show Date: ${momentTime}
+            `
 
-        console.log("The date of the show is: " + momentTime);
+            console.log(output)
+            fs.appendFile("log.txt", output,  function(error){
+                if (error) {
+                    console.log(err);
+                  }
+                  else {
+                      console.log(functionData, "Has been logged!")
+                  }
+            })
     })
+
+   
+
 
     .catch(function(err){
         console.log(err)
         console.log(`Sorry, I don't know that one, try again!`)
 
     })
+
+    
+
+  
 }
 
 
@@ -120,6 +187,7 @@ function say() {
     })
     
 }
+
 
 
     
