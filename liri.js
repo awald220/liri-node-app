@@ -26,10 +26,11 @@ switch(action){
         break;
 
     case "do-what-it-says":
-        says()
+        say()
         break;
 
     default:
+
         break;
     
 }
@@ -46,7 +47,7 @@ function song(){
           return console.log('Error occurred: ' + err);
         }
         // console.log(name)
-        console.log(data.tracks)
+        // console.log(data.tracks)
         for (var key in data.tracks.items){
             console.log(data.tracks.items[key].artists[0].name);
             console.log(data.tracks.items[key].preview_url);
@@ -94,27 +95,49 @@ function band(){
     axios
     .get(queryURL)
     .then(function(response){
-        // console.log(response)
-        console.log(response.data[0].venue.name)
-        console.log(response.data[0].venue.location)
+        console.log(response)
         
-        //format the date of the show
-        var date = response.data[0].datetime;
-        var momentTime = moment(date).format('MM/DD/YYYY')
-        console.log(momentTime)
+        console.log("Name of the venue:", response.data[0].venue.name);
+        console.log("Venue location:", response.data[0].venue.city);
+        var eventDate = moment(response.data[0].datetime).format('MM/DD/YYYY');
+        console.log("Date of the Event:", eventDate);
+    })
+
+    .catch(function(err){
+        console.log(err)
+        console.log(`Sorry, I don't know that one, try again!`)
+
     })
 }
 
 
-function doWhatItSays(){
-    fs.readFile("random.txt", "utf8", function(error, data){
-        if (error) {
-            return console.log(error);
-        }
+function say() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        if (error){
+            console.log(error);
+        } 
+
+        // console.log(data);
 
         var dataArr = data.split(",");
-        action1=dataArr[1];
 
-        pick(action1, functionData1);
+        // console.log(dataArr);
+        // console.log(dataArr[0], dataArr[1]);
+
+        action = dataArr[0]
+        functionData = dataArr[1]
+
+        console.log(action, functionData)
+
+        song()
     })
+    
 }
+
+
+    
+    
+  
+    
+
+
