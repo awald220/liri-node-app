@@ -14,13 +14,13 @@ It uses the Spotify, OMBD, and Bands in town API's
 
 
 # psuedocode
-make files/set them up
-install the stuff
-set up apis 
-get a response from the apis 
-set up functions
-set up switch
-send data to the text file
+1. make files/set them up
+2. install the stuff
+3. set up apis 
+4. get a response from the apis 
+5. set up functions
+6. set up switch
+7. send data to the text file
 
 
 
@@ -40,6 +40,20 @@ By running these command the data will be send to both the terminal console and 
 
 
 # screenshots/video of working app
+screenshot of the concert-this command with artist name
+![](images/concertArtist.png)
+screenshot of the concert-this command without artist name it is using the default
+![](images/concertDefault.png)
+screenshot of the movie-this command with the movie name 
+![](images/movieMovie.png)
+screenshot of the movie-this command without the movie name it is using the default
+![](images/movieDefault.png)
+screenshot of the spotify-this-song command with the song name
+![](images/songSong.png)
+screenshot of the spotify-this-song command without the song name it is using the default
+![](images/songDefault.png)
+screenshot of the terminal using the command do-what-it-says it is pulling from the txt file
+![](images/says.png)
 
 # deployed links
 link to portfolio
