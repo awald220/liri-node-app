@@ -46,13 +46,12 @@ function song(){
         if (err) {
           return console.log('Error occurred: ' + err);
         }
-        // console.log(name)
-        // console.log(data.tracks)
+   
         for (var key in data.tracks.items){
-            console.log(data.tracks.items[key].artists[0].name);
-            console.log(data.tracks.items[key].preview_url);
-            console.log(data.tracks.items[key].name);
-            console.log(data.tracks.items[key].album.name);
+            console.log("Artist Name: " + data.tracks.items[key].artists[0].name);
+            console.log("Preview URL: " + data.tracks.items[key].preview_url);
+            console.log("Track Name: " + data.tracks.items[key].name);
+            console.log("Album Name: " + data.tracks.items[key].album.name);
             
         }  
         
@@ -117,12 +116,7 @@ function say() {
             console.log(error);
         } 
 
-        // console.log(data);
-
         var dataArr = data.split(",");
-
-        // console.log(dataArr);
-        // console.log(dataArr[0], dataArr[1]);
 
         action = dataArr[0]
         functionData = dataArr[1]
