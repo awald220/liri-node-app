@@ -1,26 +1,64 @@
 
+            Movie Title: Mr Nobody
+            Year: 2018
+            IMBD Rating: N/A
+            Country: UK
+            Language: English
+            Plot: Ryan Nobody leaves behind a powerful message to the world after taking his own life.
+            Cast:Nathan Hackett
+            
+            Movie Title: Frozen
+            Year: 2013
+            IMBD Rating: 7.5
+            Rotten Tomatoes Rating: 90%
+            Country: USA
+            Language: English, Norwegian
+            Plot: When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+            Cast:Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+            
+            Movie Title: Pitch Perfect
+            Year: 2012
+            IMBD Rating: 7.2
+            Rotten Tomatoes Rating: 80%
+            Country: USA
+            Language: English
+            Plot: Beca, a freshman at Barden University, is cajoled into joining The Bellas, her school's all-girls singing group. Injecting some much needed energy into their repertoire, The Bellas take on their male rivals in a campus competition.
+            Cast:Anna Kendrick, Skylar Astin, Ben Platt, Brittany Snow
             
             Venue Name: [POSTPONED] Allianz Parque | São Paulo
             Venue Location: Sao Paulo
             Show Date: 07/18/2020
             
-            Venue Name: [POSTPONED] Allianz Parque | São Paulo
-            Venue Location: Sao Paulo
-            Show Date: 07/18/2020
+                Artist Name: Ace of Base
+                Preview URL: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=32f65d124f9246eb953de653e60f3c6b
+                Track Name: The Sign
+                Album Name: The Sign
                 
-            Venue Name: Streaming LIVE
-            Venue Location: 
-            Show Date: 04/25/2020
+                Artist Name: Elevation Worship
+                Preview URL: https://p.scdn.co/mp3-preview/e4087d6155c1fece8a3099d5cf5127d4a8956595?cid=32f65d124f9246eb953de653e60f3c6b
+                Track Name: Here Again
+                Album Name: Hallelujah Here Below
                 
-            Venue Name: Streaming LIVE
-            Venue Location: 
-            Show Date: 04/25/2020
-            
+                Artist Name: Backstreet Boys
+                Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=32f65d124f9246eb953de653e60f3c6b
+                Track Name: I Want It That Way
+                Album Name: The Hits--Chapter One
+                
+                Artist Name: Backstreet Boys
+                Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=32f65d124f9246eb953de653e60f3c6b
+                Track Name: I Want It That Way
+                Album Name: The Hits--Chapter One
+                
             Venue Name: [POSTPONED] Allianz Parque | São Paulo
             Venue Location: Sao Paulo
             Show Date: 07/18/2020
             
-            Venue Name: [POSTPONED] Allianz Parque | São Paulo
-            Venue Location: Sao Paulo
-            Show Date: 07/18/2020
+            Venue Name: CenturyLink Field
+            Venue Location: Seattle
+            Show Date: 05/14/2020
+            
+            Name: justin bieber
+            Venue Name: CenturyLink Field
+            Venue Location: Seattle
+            Show Date: 05/14/2020
             

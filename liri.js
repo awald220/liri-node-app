@@ -76,6 +76,7 @@ function song(){
 function movie(){
     if (!functionData){
         functionData = "mr nobody"
+        console.log("If you haven't watched 'Mr. Nobody', then you should. It's on Netflix!")
     }
 
     var queryUrl = "http://www.omdbapi.com/?t=" + functionData + "&y=&plot=short&apikey=e53d9ff8";
@@ -139,6 +140,7 @@ function band(){
         var momentTime = moment(date).format('MM/DD/YYYY')
         var output;
         var output = `
+            Name: ${functionData}
             Venue Name: ${response.data[0].venue.name}
             Venue Location: ${response.data[0].venue.city}
             Show Date: ${momentTime}
@@ -154,9 +156,6 @@ function band(){
                   }
             })
     })
-
-   
-
 
     .catch(function(err){
         console.log(err)
