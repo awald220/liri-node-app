@@ -75,28 +75,24 @@ function movie(){
         console.log("Plot: " + response.data.Plot)
         console.log("Cast: " + response.data.Actors)
     })
-
-    var empty;
-
-    if (functionData === empty ){
-         functionData = "Mr. Nobody";
-        console.log("If you haven't watched 'Mr. Nobody', then you should. Its on Netflix! http://www.imdb.com/title/tt0485947/");
-    }
 }
 
 //function to run get data for the bands in town concert
 function band(){
-    var queryURL = "https://rest.bandsintown.com/artists/" + functionData + "?app_id=codingbootcamp";
+    var queryURL = "https://rest.bandsintown.com/artists/" + functionData + "/events?app_id=codingbootcamp";
 
     axios
     .get(queryURL)
     .then(function(response){
-        console.log(response)
+        // console.log(response)
         
-        console.log("Name of the venue:", response.data[0].venue.name);
-        console.log("Venue location:", response.data[0].venue.city);
-        var eventDate = moment(response.data[0].datetime).format('MM/DD/YYYY');
-        console.log("Date of the Event:", eventDate);
+        console.log(functionData + " is playing at: " + response.data[0].venue.name);
+        console.log("This is located in: " + response.data[0].venue.city);
+
+        var date = response.data[0].datetime;
+        var momentTime = moment(date).format('MM/DD/YYYY')
+
+        console.log("The date of the show is: " + momentTime);
     })
 
     .catch(function(err){
