@@ -66,18 +66,15 @@ function movie(){
     axios
     .get(queryUrl)
     .then(function(response){
-        console.log(response);
-
-        console.log(response.data.Title)
-        console.log(response.data.Year)
-        console.log(response.data.imdbRating)
-        console.log(response.data.Ratings[1].Value)
-        console.log(response.data.Country)
-        console.log(response.data.Language)
-        console.log(response.data.Plot)
-        console.log(response.data.Actors)
+        console.log("Movie Title: " + response.data.Title)
+        console.log("Year: " + response.data.Year)
+        console.log("IMBD Rating: " + response.data.imdbRating)
+        console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value)
+        console.log("Country: " + response.data.Country)
+        console.log("Language: " + response.data.Language)
+        console.log("Plot: " + response.data.Plot)
+        console.log("Cast: " + response.data.Actors)
     })
-
 
     var empty;
 
