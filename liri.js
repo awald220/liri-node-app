@@ -9,9 +9,10 @@ moment().format();
 
 //vars 
 var action = process.argv[2]
-var functionData = process.argv[3]
+var functionData = process.argv.slice(3).join(" ");
 console.log(action, functionData)
 
+//switch case to make commands
 switch(action){
     case "movie-this":
         movie()
@@ -168,7 +169,7 @@ function band(){
   
 }
 
-
+//function to run the do-what-it-says command
 function say() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (error){
